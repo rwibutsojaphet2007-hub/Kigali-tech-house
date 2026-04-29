@@ -9,11 +9,15 @@ export const useProductsStore = defineStore('products', () => {
   const error = ref(null)
 
   const fetchProducts = async () => {
+
     try {
       loading.value = true
-      const response = await axios.get('https://fakestoreapi.com/products')
+      let response = await axios.get('https://fakestoreapi.com/products')
+      // Override with clothing-focused products
+      response.data = response.data.filter(p => p.category === 'men\'s clothing' || p.category === 'women\'s clothing').slice(0, 24)
       products.value = response.data
     } catch (err) {
+
       error.value = err.message
     } finally {
       loading.value = false

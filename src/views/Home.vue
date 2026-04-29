@@ -43,9 +43,9 @@
             @keyup.enter="goToCategory(category)"
           >
             <div class="bg-white rounded-2xl p-8 text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center justify-center">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                <span class="text-2xl font-bold text-white">{{ category.charAt(0).toUpperCase() }}</span>
-              </div>
+
+              <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop&round" alt="Clothing category" class="w-20 h-20 rounded-2xl object-cover mb-6 mx-auto shadow-lg" loading="lazy" />
+
               <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ formatCategory(category) }}</h3>
               <p class="text-gray-600">Premium selection</p>
             </div>
