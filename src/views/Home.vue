@@ -72,7 +72,9 @@
           @retry="fetchFeaturedProducts"
         />
         
-        <div v-else-if="featuredProducts.length" class="grid md:grid-cols-4 gap-8">
+
+        <div v-else-if="featuredProducts.length" class="grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-6">
+
           <ProductCard 
             v-for="product in featuredProducts" 
             :key="product.id"
@@ -112,7 +114,9 @@ const productsStore = useProductsStore()
 const categories = computed(() => productsStore.categories)
 const featuredProductsLoading = computed(() => productsStore.loading)
 const featuredProductsError = computed(() => productsStore.error)
-const featuredProducts = computed(() => productsStore.products.slice(0, 8))
+
+const featuredProducts = computed(() => productsStore.products.slice(0, 12))
+
 
 const goToCategory = (category) => {
   window.location.href = `/products/${encodeURIComponent(category)}`
